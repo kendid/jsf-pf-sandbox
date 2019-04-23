@@ -40,4 +40,8 @@ public class HelloWorld {
   public void setSelection(final Integer selection) {
     this.selection = selection;
   }
+
+  public void onSelectionChanged() {
+    System.out.println(getSelection());
+  }
 }

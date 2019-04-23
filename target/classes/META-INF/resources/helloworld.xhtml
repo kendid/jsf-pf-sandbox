@@ -13,7 +13,7 @@
 
       <p:dataTable id="table" value="#{helloWorld.table}">
         <p:column id="tableColumnCombobox">
-          <p:outputLabel id="comboboxLabel" for="combobox">Select:</p:outputLabel>
+          <p:outputLabel for="combobox">Select:</p:outputLabel>
           <p:selectOneMenu id="combobox" value="#{helloWorld.selection}">
             <p:ajax update="textfield" listener="#{helloWorld.onSelectionChanged}"/>
             <f:selectItems value="#{helloWorld.menuItems}" />
