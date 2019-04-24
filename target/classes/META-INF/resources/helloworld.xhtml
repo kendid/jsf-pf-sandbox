@@ -13,18 +13,22 @@
 
       <p:dataTable id="table" value="#{helloWorld.table}">
         <p:column id="tableColumnCombobox">
-          <p:outputLabel for="combobox">Select:</p:outputLabel>
+          <p:outputLabel id="comboboxLabel" for="combobox">Select:</p:outputLabel>
           <p:selectOneMenu id="combobox" value="#{helloWorld.selection}">
-            <p:ajax update="textfield" listener="#{helloWorld.onSelectionChanged}"/>
+            <p:ajax process="textfield" />
+            <p:ajax update="textfield" />
             <f:selectItems value="#{helloWorld.menuItems}" />
           </p:selectOneMenu>
         </p:column>
         <p:column id="tableColumnTextfield">
           <p:outputLabel id="textfieldLabel" for="textfield">Enter:</p:outputLabel>
-          <p:inputText id="textfield" disabled="#{helloWorld.three}"/>
+          <p:inputText id="textfield"
+                       readonly="#{helloWorld.three}"
+                       disabled="#{helloWorld.three}"
+                       value="#{helloWorld.text}" />
         </p:column>
       </p:dataTable>
-
+      <p:commandButton value="Submit?" action="#{helloWorld.submit}" />
   </h:form>
 </h:body>
 </html>
